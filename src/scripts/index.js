@@ -2,11 +2,9 @@
 import '../styles/main.scss';
 // Import any additional modules you want to include below \/
 import { convertedData } from '../scripts/data.js'
-
-
 // \/ All of your javascript should go here \/
+
 const importedData = JSON.parse(convertedData);
-// console.log(importedData);
 
 const cakes = document.getElementById('cakes')
 
@@ -16,7 +14,7 @@ importedData.cakes.map(cake => {
     div.style.height = '400px'
     div.style.display = 'flex'
     div.style.flexDirection = 'column'
-    div.style.margin = '10px'
+    div.style.margin = '35px'
 
     let img = document.createElement('img');
     img.src = cake.image;
@@ -47,8 +45,7 @@ importedData.biscuits.map(biscuit => {
     div.style.height = '400px'
     div.style.display = 'flex'
     div.style.flexDirection = 'column'
-    div.style.margin = '10px'
-
+    div.style.margin = '35px'
 
     let img = document.createElement('img');
     img.src = biscuit.image;
@@ -59,27 +56,29 @@ importedData.biscuits.map(biscuit => {
     title.innerHTML = biscuit.title
     title.style.fontWeight = '600'
 
+
     let p = document.createElement('p');
     p.innerHTML = biscuit.author
     p.style.borderBottom = '1px solid black'
+
 
     let p1 = document.createElement('p');
     p1.style.width = '250px';
     p1.innerHTML = 'Ingredients: ' + biscuit.ingredients.join(', ');
 
     div.append(img, title, p, p1);
-    biscuits.appendChild(div);
+    biscuits.appendChild(div)
 });
 
 const bread = document.getElementById('bread')
 
 importedData.bread.map(br => {
     let div = document.createElement('div')
-    div.style.width = '250px'
-    div.style.height = '400px'
-    div.style.display = 'flex'
-    div.style.flexDirection = 'column'
-    div.style.margin = '10px'
+    div.style.width = '250px';
+    div.style.height = '400px';
+    div.style.display = 'flex';
+    div.style.flexDirection = 'column';
+    div.style.margin = '35px';
 
     let img = document.createElement('img')
     img.src = br.image;
@@ -90,16 +89,16 @@ importedData.bread.map(br => {
     title.innerHTML = br.title;
     title.style.fontWeight = '600';
 
+
     let pAuth = document.createElement('p')
     pAuth.innerHTML = br.author;
-    pAuth.style.borderBottom = '1px solid black'
+    pAuth.style.borderBottom = '1px solid black';
 
-    let pIngr = document.createElement('p')
-    pIngr.style.width = '250px';
-    pIngr.innerHTML = 'Ingredients: ' + br.ingredients.join(', ');
+    let pIng = document.createElement('p')
+    pIng.style.width = '250px';
+    pIng.innerHTML = 'Ingredients: ' + br.ingredients.join(', ');
 
-    div.appendChild(img, title, pAuth, pIngr);
+    div.append(img, title, pAuth, pIng);
     bread.appendChild(div);
-
-})
+});
 
